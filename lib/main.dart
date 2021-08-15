@@ -48,8 +48,17 @@ class _RandomWordsState extends State<RandomWords> {
       ),
       trailing: Icon( 
         alreadySaved ? Icons.favorite : Icons.favorite_border,
-        color: alreadySaved ? Colors.red : null,
+        color: alreadySaved ? Colors.orange : null,
       ),
+      onTap: () { 
+        setState(() {
+          if (alreadySaved) {
+            _saved.remove(pair);
+          } else { 
+            _saved.add(pair); 
+          } 
+        });
+      },
     );
   }
 
